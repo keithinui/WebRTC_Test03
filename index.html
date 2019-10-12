@@ -3,29 +3,40 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SkyWay - P2P Media example</title>
+    <title>Fukuda Denshi RPR System</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container">
-      <h1 class="heading">P2P Media example</h1>
-      <p class="note">
-        Enter remote peer ID to call.
-      </p>
+
       <div class="p2p-media">
+
+        <!-- Video(Remote) -->
         <div class="remote-stream">
           <video id="js-remote-stream"></video>
         </div>
+
+        <!-- Video(Remote) -->
         <div class="local-stream">
+
+          <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
+          <p class="note">
+            Fukuda Denshi Co., Ltd.<br>
+            <br>
+            Your ID: <span id="js-local-id"></span><br>
+            <br>
+            <input type="text" placeholder="Remote Peer ID" id="js-remote-id">
+            <button id="js-call-trigger">Connect</button>
+            <button id="js-close-trigger">Close</button>
+
+          </p>
+
           <video id="js-local-stream"></video>
-          <p>Your ID: <span id="js-local-id"></span></p>
-          <input type="text" placeholder="Remote Peer ID" id="js-remote-id">
-          <button id="js-call-trigger">Call</button>
-          <button id="js-close-trigger">Close</button>
         </div>
+
       </div>
+
       <p class="meta" id="js-meta"></p>
-    </div>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
     <script type="text/javascript" src="key.js"></script>
