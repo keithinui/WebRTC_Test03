@@ -28,7 +28,7 @@ video {
   width: 980px;
 }
 
-/* p2p-media styles */
+/* ---------- p2p-media styles ---------- */
 .p2p-media {
   display: flex;
   align-items: center;
@@ -36,14 +36,16 @@ video {
 }
 
 .p2p-media .remote-stream {
-  width: 50%;
+  width: 100%;
+  background-color: #eee;
 }
 
 .p2p-media .local-stream {
-  width: 30%;
+  width: 20%;
+  background-color: #eee;
 }
 
-/* p2p-data styles */
+/* ---------- p2p-data styles ---------- */
 .p2p-data {
   display: grid;
   grid-template-columns: 30% 1fr;
@@ -57,7 +59,7 @@ video {
   margin-top: 0;
 }
 
-/* room */
+/* ---------- room ---------- */
 .room {
   display: grid;
   grid-template-columns: 30% 40% 30%;
