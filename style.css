@@ -34,10 +34,11 @@ video {
   color: gray;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 640px;
+.messages {
+  background-color: #eee;
+  min-height: 100px;
+  padding: 8px;
+  margin-top: 0;
 }
 
 /* ---------- p2p-media styles ---------- */
@@ -46,10 +47,11 @@ video {
   justify-content: center
 }
 
-.p2p-media .remote-stream {
+.p2p-media .remote-streams {
   width: 50%;
   max-higth: 480px;
   padding: 10px;
+  background-color: #f6fbff;
 }
 
 .p2p-media .local-stream {
