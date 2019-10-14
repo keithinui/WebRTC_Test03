@@ -11,29 +11,37 @@
       <div class="p2p-media">
 
         <!-- Video(Remote) -->
-        <div class="remote-stream">
-          <video id="js-remote-stream"></video>
-        </div>
+        <div class="remote-streams" id="js-remote-streams"></div>
 
-        <!-- Video(Local) -->
         <div class="local-stream">
-
+          <!-- Title, button, LAbles -->
           <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
+          <p class="logo">
+            Fukuda Denshi Co., Ltd.
+          </p>
           <p class="note">
-            Fukuda Denshi Co., Ltd.<br>
             <br>
-            Your ID: <span id="js-local-id"></span><br>
+            Change Room mode (before join in a room):
+            <a href="#">mesh</a> / <a href="#sfu">sfu</a>
             <br>
-            <input type="text" placeholder="Remote Peer ID" id="js-remote-id">
-            <button id="js-call-trigger">Connect</button>
-            <button id="js-close-trigger">Close</button>
+
+            <span id="js-room-mode"></span>:
+            <input type="text" placeholder="Room Name" id="js-room-id" value="001">
+            <button id="js-join-trigger">Join</button>
+            <button id="js-leave-trigger">Leave</button>
 
           </p>
 
+          <!-- Video(Local) -->
           <video id="js-local-stream"></video>
         </div>
-
       </div>
+
+        <div>
+          <pre class="messages" id="js-messages"></pre>
+          <input type="text" id="js-local-text">
+          <button id="js-send-trigger">Send</button>
+        </div>
 
       <p class="meta" id="js-meta"></p>
 
