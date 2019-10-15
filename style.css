@@ -20,6 +20,25 @@ video {
   text-align: center;
 }
 
+.data {
+  font-size: 50px;
+  font-family: "arial";
+  text-align: left;
+  font-weight: bold;
+}
+
+.colorPR {
+  color: #00EE00;
+}
+
+.colorSpO2 {
+  color: #FFFF00;
+}
+
+.colorRR {
+  color: #00FFFF;
+}
+
 .logo {
   text-align: center;
   font-size: 10px;
@@ -44,19 +63,27 @@ video {
 /* ---------- p2p-media styles ---------- */
 .p2p-media {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center
 }
 
 .p2p-media .remote-streams {
   width: 50%;
   max-higth: 480px;
-  padding: 10px;
-  background-color: #f6fbff;
+  background-color: silver;
+  padding: 5px;
 }
 
 .p2p-media .local-stream {
   width: 20%;
   align-items: center;
+  padding: 5px;
+}
+
+.p2p-media .parameters {
+  background-color: gray;
+  align-items: left;
+  width: 73%;
 }
 
 /* ---------- p2p-data styles ---------- */
