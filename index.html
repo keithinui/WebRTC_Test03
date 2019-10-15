@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
       <div class="p2p-media">
 
         <!-- Video(Remote) -->
@@ -21,33 +20,46 @@
           </p>
           <p class="note">
             <br>
-            Change Room mode (before join in a room):
+            Mode:
             <a href="#">mesh</a> / <a href="#sfu">sfu</a>
             <br>
 
             <span id="js-room-mode"></span>:
-            <input type="text" placeholder="Room Name" id="js-room-id" value="001">
+            <input type="text" placeholder="Room Name" id="js-room-id" value="001" style="width:100px;">
+            <br>
             <button id="js-join-trigger">Join</button>
             <button id="js-leave-trigger">Leave</button>
-
           </p>
 
           <!-- Video(Local) -->
           <video id="js-local-stream"></video>
         </div>
-      </div>
 
-        <div>
-          <pre class="messages" id="js-messages"></pre>
-          <input type="text" id="js-local-text">
-          <button id="js-send-trigger">Send</button>
+        <!-- Paramaters -->
+        <div class="parameters">
+          <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data">-- </a></c>
+          <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data">-- </a></c>
+          <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data">-- </a></c>
+
+          <output name="data01" value="00"></output>
         </div>
 
+      </div>
+
+
+      <div>
+        <pre class="messages" id="js-messages"></pre>
+        <input type="text" id="js-local-text">
+        <button id="js-send-trigger">Send</button>
+      </div>
+
       <p class="meta" id="js-meta"></p>
+
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
     <script type="text/javascript" src="key.js"></script>
     <script type="text/javascript" src="script.js"></script>
+
   </body>
 </html>
