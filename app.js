@@ -18,7 +18,7 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
 
     localSendText.value = textPR.innerHTML;
 
-    room.send(localText.value);
+    room.send(localSendText.value);
 
     heartRates.push(heartRateMeasurement.heartRate);
   });
