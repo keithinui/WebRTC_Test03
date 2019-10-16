@@ -78,8 +78,8 @@ var room;
     });
 
     room.on('data', ({ data, src }) => {
-      // Show a message sent to the room and who sent
-      messages.textContent += `${src}: ${data}\n`;
+      // Show PR data sent from the remort
+      textPR.innerHTML = data;
     });
 
     // for closing room members
@@ -112,7 +112,6 @@ var room;
       // Send message to all of the peers in the room via websocket
       room.send(localText.value);
 
-      messages.textContent += `${peer.id}: ${localText.value}\n`;
       localText.value = '';
     }
   });
