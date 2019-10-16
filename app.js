@@ -1,4 +1,5 @@
-var textPR = document.querySelector('#textPR');
+var textPR = document.getElementById('textPR');
+var localSendText = document.getElementById('js-local-text');
 
 textPR.addEventListener('click', function() {
   textPR.textContent = '..';
@@ -14,9 +15,13 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
   heartRateMeasurement.addEventListener('characteristicvaluechanged', event => {
     var heartRateMeasurement = heartRateSensor.parseHeartRate(event.target.value);
     textPR.innerHTML = heartRateMeasurement.heartRate;
+
+    localSendText.value = textPR.innerHTML;
+
+    room.send(localText.value);
+
     heartRates.push(heartRateMeasurement.heartRate);
   });
 }
 
 var heartRates = [];
-
