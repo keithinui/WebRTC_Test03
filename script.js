@@ -1,4 +1,5 @@
 const Peer = window.Peer;
+var room;
 
 (async function main() {
   const localVideo = document.getElementById('js-local-stream');
@@ -53,7 +54,7 @@ const Peer = window.Peer;
       return;
     }
 
-    const room = peer.joinRoom(roomId.value, {
+    room = peer.joinRoom(roomId.value, {
       mode: getRoomModeByHash(),
       stream: localStream,
     });
