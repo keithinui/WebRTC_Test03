@@ -21,7 +21,7 @@ video {
 }
 
 .data {
-  font-size: 50px;
+  font-size: 60px;
   font-family: "arial";
   text-align: left;
   font-weight: bold;
@@ -53,13 +53,6 @@ video {
   color: gray;
 }
 
-.messages {
-  background-color: #eee;
-  min-height: 100px;
-  padding: 8px;
-  margin-top: 0;
-}
-
 /* ---------- p2p-media styles ---------- */
 .p2p-media {
   display: flex;
@@ -71,6 +64,7 @@ video {
   width: 50%;
   max-higth: 480px;
   background-color: silver;
+  align-items: center;
   padding: 5px;
 }
 
@@ -81,10 +75,25 @@ video {
 }
 
 .p2p-media .parameters {
+  width: 50%;
   background-color: gray;
-  align-items: left;
-  width: 73%;
+  align-items: center;
+  padding: 5px;
 }
+
+.p2p-media .messages {
+  align-items: center;
+  background-color: #eee;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
 
 /* ---------- p2p-data styles ---------- */
 .p2p-data {
