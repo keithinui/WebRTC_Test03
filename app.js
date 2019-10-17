@@ -16,7 +16,7 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
     var heartRateMeasurement = heartRateSensor.parseHeartRate(event.target.value);
     textPR.innerHTML = heartRateMeasurement.heartRate;
 
-    if(peer.opne){
+    if(peer.open){
         room.send(textPR.innerHTML);
     }
 
