@@ -1,6 +1,6 @@
 const Peer = window.Peer;
-var room;
-var peer;
+let room;
+let peer;
 
 (async function main() {
   const localVideo = document.getElementById('js-local-stream');
