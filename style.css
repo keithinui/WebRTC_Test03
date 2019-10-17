@@ -57,7 +57,7 @@ video {
   font-size: 12px;
   width: 71%;
   align-items: center;
-  background-color: black;
+  background-color: gray;
   padding: 5px;
   min-hight: 200px;
   margin:  0 auto;
@@ -86,7 +86,7 @@ video {
 
 .p2p-media .parameters {
   width: 71%;
-  background-color: gray;
+  background-color: black;
   align-items: center;
   min-higth: 100px;
   padding: 5px;
