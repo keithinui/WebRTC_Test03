@@ -53,6 +53,16 @@ video {
   color: gray;
 }
 
+.messages {
+  font-size: 12px;
+  width: 71%;
+  align-items: center;
+  background-color: black;
+  padding: 5px;
+  min-hight: 200px;
+  margin:  0 auto;
+}
+
 /* ---------- p2p-media styles ---------- */
 .p2p-media {
   display: flex;
@@ -62,7 +72,7 @@ video {
 
 .p2p-media .remote-streams {
   width: 50%;
-  max-higth: 480px;
+  max-higth: 400px;
   background-color: silver;
   align-items: center;
   padding: 5px;
@@ -75,17 +85,14 @@ video {
 }
 
 .p2p-media .parameters {
-  width: 50%;
+  width: 71%;
   background-color: gray;
   align-items: center;
+  min-higth: 100px;
   padding: 5px;
 }
+/* ---------- p2p-media styles ---------- */
 
-.p2p-media .messages {
-  align-items: center;
-  background-color: #eee;
-  padding: 5px;
-}
 
 
 
