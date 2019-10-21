@@ -44,7 +44,4 @@ function transmitData() {
     }
 }
 
-window.onload = function () {
-  // Call the function, hyoji() in 500ms period
-  timer1 = setInterval("transmitData()", 500);
-}
+
