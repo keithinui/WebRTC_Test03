@@ -80,8 +80,12 @@ var peer;
 
     room.on('data', ({ data, src }) => {
       // Show PR and Battery level data sent from the remort
-      textPR.innerHTML = data[0];
-      statusBatteryLavel.innerHTML = data[1];
+      if (data.length == 20){
+        textPR.innerHTML = data[0];
+        statusBatteryLavel.innerHTML = data[1];
+      }else{
+        // Show waveforme data
+        messages.textContent += data + '\n';
     });
 
     // for closing room members
