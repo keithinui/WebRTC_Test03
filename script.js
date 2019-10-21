@@ -1,6 +1,7 @@
 const Peer = window.Peer;
 var room;
 var peer;
+ver youJoyned = 0;
 
 (async function main() {
   const localVideo = document.getElementById('js-local-stream');
@@ -62,10 +63,7 @@ var peer;
 
     room.once('open', () => {
       messages.textContent += '=== You joined ===\n';
-      
-      // Call the function, interval timer function in 200ms period
-      timer1 = setInterval("transmitData()", 200);
-      console.log('Timer1 stated!!');
+      youJoyned = 1;
     });
     room.on('peerJoin', peerId => {
       messages.textContent += `=== ${peerId} joined ===\n`;
