@@ -2,6 +2,7 @@ var textPR = document.getElementById('textPR');
 var localSendText = document.getElementById('js-local-text');
 var batteryLevel;
 var heartRateData;
+var spo2 = 50;
 var dataSendParameters = [20];    // Parameter Data to send
 var dataSendWaveformes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];   // Waveforme Data to send
 var timer1;							// Interval timer
@@ -27,10 +28,13 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
 
     heartRateSensor.getBatteryLevel();
     statusBatteryLavel.textContent = batteryLevel;
+    
+    spo2 = spo2 >= 99 ? 0 : spo2 + 1;
 
     // Send array data
     dataSendParameters[0] = heartRateData;
     dataSendParameters[1] = batteryLevel;
+    dataSendParameters[2] = spo2
     if(peer.open){
       room.send(dataSendParameters);
     }
@@ -39,7 +43,7 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
 
 function transmitData() {
   if(youJoyned == 1 && peer.open){
-    dataSendWaveformes.push(heartRateMeasurement.heartRate);
+    dataSendWaveformes.push(heartRateData);
     room.send(dataSendWaveformes);
   }
 }
