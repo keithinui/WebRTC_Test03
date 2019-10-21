@@ -22,7 +22,8 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
     statusBatteryLavel.textContent = batteryLevel;
 
     if(peer.open){
-        room.send(textPR.innerHTML);
+//        room.send(textPR.innerHTML);
+        room.send(heartRates);
     }
 
     heartRates.push(heartRateMeasurement.heartRate);
