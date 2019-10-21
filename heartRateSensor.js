@@ -8,7 +8,7 @@
       this._characteristics = new Map();
     }
     connect() {
-      return navigator.bluetooth.requestDevice({filters:[{services:[ 'heart_rate' ]}]})
+      return navigator.bluetooth.requestDevice({filters:[{services:[ 'heart_rate', 'battery_service' ]}]})
       .then(device => {
         this.device = device;
         return device.gatt.connect();
@@ -21,12 +21,26 @@
               this._cacheCharacteristic(service, 'body_sensor_location'),
               this._cacheCharacteristic(service, 'heart_rate_measurement'),
             ])
+          }),
+
+          server.getPrimaryService('battery_service').then(service => {
+            return Promise.all([
+              this._cacheCharacteristic(service, 'battery_level'),
+            ])
           })
+
         ]);
       })
     }
 
     /* Heart Rate Service */
+
+    getBatteryLevel() {
+      return this._readCharacteristicValue('battery_level')
+      .then(data => {
+        batteryLevel = data.getUint8(0);
+     });
+    }
 
     getBodySensorLocation() {
       return this._readCharacteristicValue('body_sensor_location')
