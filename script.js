@@ -79,8 +79,9 @@ var peer;
     });
 
     room.on('data', ({ data, src }) => {
-      // Show PR data sent from the remort
-      textPR.innerHTML = data;
+      // Show PR and Battery level data sent from the remort
+      textPR.innerHTML = data[0];
+      statusBatteryLavel.innerHTML = data[1];
     });
 
     // for closing room members
