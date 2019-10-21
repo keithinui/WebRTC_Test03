@@ -5,7 +5,7 @@ var respRateData;                 // 1. Resp. rate data
 var spo2 = 50;                    // 2. SpO" data
 var batteryLevel;                 // 3. Battery Level
 var dataSendParameters = [20];    // Parameter Data to send
-var dataSendWaveformes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];   // Waveforme Data to send
+var dataSendWaveformes = [0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,20,0,0];   // Waveforme Data to send
 var timer1;							          // Interval timer
 var connectedBLE = 0;             // 0: BLE not connected,       1: BLE connected
 var waveDisplayOn = 0;            // 0: Waveforme Display Off,   1: On
@@ -54,7 +54,7 @@ function transmitData() {
     room.send(dataSendWaveformes);
     
     // SpO2 data increment for test purpose
-    spo2 = spo2 >= 99 ? 0 : spo2 + 1;
+    // spo2 = spo2 >= 99 ? 0 : spo2 + 1;
   }
 }
 
