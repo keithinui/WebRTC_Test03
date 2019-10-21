@@ -23,7 +23,7 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
   heartRateMeasurement.addEventListener('characteristicvaluechanged', event => {
     var heartRateMeasurement = heartRateSensor.parseHeartRate(event.target.value);
     
-    // Set parameters (Heart rate and Battery Level)
+    // Set parameters (Heart rate and Battery Level) to the local side
     heartRateData = heartRateMeasurement.heartRate;
     textPR.innerHTML = heartRateData;
 
@@ -31,8 +31,9 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
     statusBatteryLavel.textContent = batteryLevel;
     
     spo2 = spo2 >= 99 ? 0 : spo2 + 1;
+    statusSpo2.textContent = spo2;
 
-    // Send array data
+    // Send array data to the remote side
     dataSendParameters[0] = heartRateData;
     dataSendParameters[1] = 0;
     dataSendParameters[2] = spo2;
