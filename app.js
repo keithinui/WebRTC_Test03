@@ -3,7 +3,7 @@ var localSendText = document.getElementById('js-local-text');
 var batteryLevel;
 var heartRateData;
 var dataSendParameters = [20];    // Parameter Data to send
-var dataSendWaveformes = [200];   // Waveforme Data to send
+var dataSendWaveformes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];   // Waveforme Data to send
 var timer1;							// Interval timer
 
 textPR.addEventListener('click', function() {
