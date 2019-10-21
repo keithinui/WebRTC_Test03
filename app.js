@@ -60,5 +60,5 @@ function transmitData() {
 
 window.onload = function () {
   // Call the function, interval timer function in 500ms period
-  timer1 = setInterval("transmitData()", 500);
+  // timer1 = setInterval("transmitData()", 500);
 }
