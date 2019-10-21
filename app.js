@@ -2,7 +2,8 @@ var textPR = document.getElementById('textPR');
 var localSendText = document.getElementById('js-local-text');
 var batteryLevel;
 var heartRateData;
-var dataSend = [200];   // Data to send
+var dataSendParameters = [20];    // Parameter Data to send
+var dataSendWaveformes = [200];   // Waveforme Data to send
 var timer1;							// Interval timer
 
 textPR.addEventListener('click', function() {
@@ -19,25 +20,31 @@ textPR.addEventListener('click', function() {
 function handleHeartRateMeasurement(heartRateMeasurement) {
   heartRateMeasurement.addEventListener('characteristicvaluechanged', event => {
     var heartRateMeasurement = heartRateSensor.parseHeartRate(event.target.value);
+    
+    // Set parameters (Heart rate and Battery Level)
     heartRateData = heartRateMeasurement.heartRate;
     textPR.innerHTML = heartRateData;
 
     heartRateSensor.getBatteryLevel();
     statusBatteryLavel.textContent = batteryLevel;
 
-    dataSend[0] = heartRateData;
-    dataSend[1] = batteryLevel;
+    // Send array data
+    dataSendParameters[0] = heartRateData;
+    dataSendParameters[1] = batteryLevel;
+    if(peer.open){
+      room.send(dataSendParameters);
+    }
   });
 }
 
 function transmitData() {
     if(peer.open){
-        room.send(dataSend);
+      dataSendWaveformes.push(heartRateMeasurement.heartRate);
+      room.send(dataSendWaveformes);
     }
-    // dataSend.push(heartRateMeasurement.heartRate);
 }
 
 window.onload = function () {
-  // Call the function, hyoji() in 500ms period
-  timer1 = setInterval("transmitData()", 500);
+  // Call the function, hyoji() in 200ms period
+  timer1 = setInterval("transmitData()", 200);
 }
