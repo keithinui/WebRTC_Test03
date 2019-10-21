@@ -6,7 +6,8 @@ var spo2 = 50;                    // 2. SpO" data
 var batteryLevel;                 // 3. Battery Level
 var dataSendParameters = [20];    // Parameter Data to send
 var dataSendWaveformes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];   // Waveforme Data to send
-var timer1;							// Interval timer
+var timer1;							          // Interval timer
+var connectedBLE = 0;             // 0: BLE not connected, 1: BLE connected
 
 textPR.addEventListener('click', function() {
   textPR.textContent = '..';
@@ -41,11 +42,14 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
     if(peer.open){
       room.send(dataSendParameters);
     }
+    
+    // BLE Connected
+    connectedBLE = 1;
   });
 }
 
 function transmitData() {
-  if(youJoyned == 1 && peer.open){
+  if(connectedBLE == 1 && youJoyned == 1 && peer.open){
     dataSendWaveformes.push(heartRateData);
     room.send(dataSendWaveformes);
   }
