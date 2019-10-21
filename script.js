@@ -1,7 +1,7 @@
 const Peer = window.Peer;
 var room;
 var peer;
-ver youJoyned = 0;
+var youJoyned = 0;
 
 (async function main() {
   const localVideo = document.getElementById('js-local-stream');
