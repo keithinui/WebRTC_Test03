@@ -65,6 +65,7 @@ var peer;
       
       // Call the function, interval timer function in 200ms period
       timer1 = setInterval("transmitData()", 200);
+      console.log('Timer1 stated!!');
     });
     room.on('peerJoin', peerId => {
       messages.textContent += `=== ${peerId} joined ===\n`;
