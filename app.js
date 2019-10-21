@@ -38,10 +38,11 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
 }
 
 function transmitData() {
-    if(peer.open){
-      dataSendWaveformes.push(heartRateMeasurement.heartRate);
-      room.send(dataSendWaveformes);
-    }
+  console.log('Interval Timer!!');
+  if(peer.open){
+    dataSendWaveformes.push(heartRateMeasurement.heartRate);
+    room.send(dataSendWaveformes);
+  }
 }
 
 
