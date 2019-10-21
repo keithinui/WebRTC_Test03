@@ -7,7 +7,8 @@ var batteryLevel;                 // 3. Battery Level
 var dataSendParameters = [20];    // Parameter Data to send
 var dataSendWaveformes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];   // Waveforme Data to send
 var timer1;							          // Interval timer
-var connectedBLE = 0;             // 0: BLE not connected, 1: BLE connected
+var connectedBLE = 0;             // 0: BLE not connected,       1: BLE connected
+var waveDisplayOn = 0;            // 0: Waveforme Display Off,   1: On
 
 textPR.addEventListener('click', function() {
   textPR.textContent = '..';
@@ -31,7 +32,6 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
     heartRateSensor.getBatteryLevel();
     statusBatteryLavel.textContent = batteryLevel;
     
-    spo2 = spo2 >= 99 ? 0 : spo2 + 1;
     statusSpo2.textContent = spo2;
 
     // Send array data to the remote side
@@ -52,6 +52,9 @@ function transmitData() {
   if(connectedBLE == 1 && youJoyned == 1 && peer.open){
     dataSendWaveformes.push(heartRateData);
     room.send(dataSendWaveformes);
+    
+    // SpO2 data increment for test purpose
+    spo2 = spo2 >= 99 ? 0 : spo2 + 1;
   }
 }
 
