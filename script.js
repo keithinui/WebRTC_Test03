@@ -63,7 +63,7 @@ var peer;
     room.once('open', () => {
       messages.textContent += '=== You joined ===\n';
       
-      // Call the function, hyoji() in 200ms period
+      // Call the function, interval timer function in 200ms period
       timer1 = setInterval("transmitData()", 200);
     });
     room.on('peerJoin', peerId => {
@@ -83,7 +83,7 @@ var peer;
 
     room.on('data', ({ data, src }) => {
       // Show PR and Battery level data sent from the remort
-      if (data.length == 20){
+      if (data.length < 20){
         textPR.innerHTML = data[0];
         statusBatteryLavel.innerHTML = data[1];
       }else{
