@@ -86,6 +86,7 @@ var peer;
       }else{
         // Show waveforme data
         messages.textContent += data + '\n';
+      }
     });
 
     // for closing room members
