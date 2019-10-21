@@ -82,14 +82,13 @@ var youJoyned = 0;
 
     room.on('data', ({ data, src }) => {
       // Show PR and Battery level data sent from the remort
-      console.log('出力結果: ' + data.length);
       if (data.length < 20){
         textPR.innerHTML = data[0];
         statusSpo2.innerHTML =data[2];
         statusBatteryLavel.innerHTML = data[3];
       }else{
         // Show waveforme data
-        messages.textContent += data + '\n';
+        messages.textContent = data;
       }
     });
 
