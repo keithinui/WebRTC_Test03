@@ -88,7 +88,7 @@ var youJoyned = 0;
         statusBatteryLavel.innerHTML = data[3];
       }else{
         // Show waveforme data
-        localText.textContent = data.length;
+        localText.innerHTML = data.length;
       }
     });
 
