@@ -38,11 +38,13 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
 }
 
 function transmitData() {
-  console.log('Interval Timer!!');
-  if(peer.open){
+  if(youJoyned == 1 && peer.open){
     dataSendWaveformes.push(heartRateMeasurement.heartRate);
     room.send(dataSendWaveformes);
   }
 }
 
-
+window.onload = function () {
+  // Call the function, interval timer function in 200ms period
+  timer1 = setInterval("transmitData()", 200);
+}
