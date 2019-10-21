@@ -39,9 +39,6 @@ function handleHeartRateMeasurement(heartRateMeasurement) {
 
 function transmitData() {
   if(youJoyned == 1 && peer.open){
-    
-    console.log('Interval timer!!!!!');
-    
     dataSendWaveformes.push(heartRateMeasurement.heartRate);
     room.send(dataSendWaveformes);
   }
